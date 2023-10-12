@@ -1,0 +1,9 @@
+---
+- hosts: tek
+  become: true
+  tasks:
+    - name: install httpd package
+      yum: pkg=httpd state=latest
+    - name: wait for file creation
+      wait_for:
+       path: /home/ayesha/vinumaa.log

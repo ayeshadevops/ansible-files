@@ -1,0 +1,8 @@
+---
+- hosts: tek[0]:jerin[2]
+  become: true
+  vars_files:
+   - variables.yml
+  tasks:
+   - include_tasks: attach.yml
+

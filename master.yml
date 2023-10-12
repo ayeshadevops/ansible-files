@@ -1,0 +1,5 @@
+---
+- hosts: tek
+  become: true
+  roles:
+   - { role: role1, when: ansible_os_family == "Ubuntu"}

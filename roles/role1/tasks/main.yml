@@ -1,0 +1,3 @@
+- name: package installation
+  yum: pkg=httpd state=present
+  notify: start service

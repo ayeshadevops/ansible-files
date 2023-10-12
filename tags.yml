@@ -1,0 +1,11 @@
+--- # Tags playbook
+- hosts: tek
+  tasks:
+   - name: enter your name
+     raw: echo "vinodh" > /home/ayesha/vinodh.log
+     tags:
+      - firstname
+   - name: designation
+     raw: echo "devops_engineer" > /home/ayesha/vinodh.log
+     tags:
+       - role

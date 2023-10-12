@@ -1,0 +1,21 @@
+#this is my first playbook
+---
+- hosts: tek
+  become: true
+  run_once: false
+  vars_prompt:
+   - name: devops
+     prompt: please enter the package name to install
+
+  tasks:
+   - name: enter my name
+     raw: echo {{devops}} > /opt/rahman
+     delegate_to: 172.31.37.172
+   - name: package '{{ devops }}' installation 
+     action: yum pkg={{devops}} state=present
+     notify: service start
+
+  handlers:
+   - name: service start
+     action: service name={{devops}} state=started
+
